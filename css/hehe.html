@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập Gấu</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .login-container {
+      text-align: center;
+    }
+
+    .bear {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: #8b5;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+    }
+
+    .eye {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: black;
+      border-radius: 50%;
+      top: 60px;
+      transition: all 0.2s;
+    }
+
+    .left-eye { left: 50px; }
+    .right-eye { right: 50px; }
+
+    .hands .hand {
+      width: 40px;
+      height: 40px;
+      background: #8b5;
+      border-radius: 50%;
+      position: absolute;
+      top: 100px;
+      transition: transform 0.3s;
+    }
+
+    .left-hand { left: 20px; }
+    .right-hand { right: 20px; }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 250px;
+      margin: 0 auto;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="bear">
+      <div class="eyes">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+      </div>
+      <div class="hands">
+        <div class="hand left-hand"></div>
+        <div class="hand right-hand"></div>
+      </div>
+    </div>
+
+    <form>
+      <input type="text" id="username" placeholder="Tên đăng nhập">
+      <input type="password" id="password" placeholder="Mật khẩu">
+    </form>
+  </div>
+
+  <script>
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const leftEye = document.querySelector('.left-eye');
+    const rightEye = document.querySelector('.right-eye');
+    const leftHand = document.querySelector('.left-hand');
+    const rightHand = document.querySelector('.right-hand');
+
+    // Mắt nhìn theo độ dài chữ
+    usernameInput.addEventListener('input', (e) => {
+      const length = e.target.value.length;
+      const move = Math.min(length * 2, 20);
+      leftEye.style.transform = `translateX(${move}px)`;
+      rightEye.style.transform = `translateX(${move}px)`;
+    });
+
+    // Che mắt khi gõ mật khẩu
+    passwordInput.addEventListener('focus', () => {
+      leftHand.style.transform = 'translateY(-40px) rotate(-30deg)';
+      rightHand.style.transform = 'translateY(-40px) rotate(30deg)';
+    });
+
+    // Bỏ che khi không focus nữa
+    passwordInput.addEventListener('blur', () => {
+      leftHand.style.transform = 'translateY(0)';
+      rightHand.style.transform = 'translateY(0)';
+    });
+  </script>
+</body>
+</html>
