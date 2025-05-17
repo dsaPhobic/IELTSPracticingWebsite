@@ -1,3 +1,5 @@
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,22 +36,25 @@
                             <img src="./Sources/LoginSources/linkin.png" alt="linkin_icon" />
                         </a>
                     </div>
-                    <div class="form_container">
+                    <form class="form_container" action="LoginController" method="post">
                         <div class="input_group">
                             <img src="./Sources/LoginSources/user.png" class="input_icon" alt="user" />
-                            <input type="text" placeholder="User Name"/>
+                            <input type="text" placeholder="Email" name="email"/>
                         </div>
 
                         <div class="input_group">
                             <img src="./Sources/LoginSources/lock.png" class="input_icon" alt="lock" />
-                            <input type="password" placeholder="Password" />
+                            <input type="password" placeholder="Password" name="password"/>
                         </div>
 
+                        <c:if test="${not empty error}">
+                            <p style="color: red;">${error}</p>
+                        </c:if>
+                         
+                        <a href="#" id="forgot-link">Forgot your password?</a><br>
+                        <button  type ="submit" class="signIn-btn">Sign In</button>
+                    </form>
 
-                        <a href="#" id="forgot-link">Forgot your password?</a>
-                        <br>
-                        <button class="signIn-btn" >Sign In</button>
-                    </div>
                 </div>
             </div>
         </div>
