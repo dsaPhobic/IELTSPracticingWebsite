@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+}
+
+#fishCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: #dff6ff;
+}
+
+.form-container {
+    position: relative;
+    z-index: 1;
+    width: 320px;
+    margin: 80px auto;
+    background-color: transparent;
+    padding: 25px;
+
+}
+h2{
+    color: #b8860b;
+    text-align: center;
+    font-size: 40px;
+
+}
+.input-icon {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-icon i.fa {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fffacd;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+}
+.icon-left{
+    margin-left: 320px;
+}
+.gender-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.gender-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+    padding: 14px 35px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-family: 'ADLaM Display', sans-serif;
+    font-size: 20px;
+    background: linear-gradient(135deg, #f9c74f, #f9844a);
+    color: #2d2d2d;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 200px;
+
+}
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #f9844a, #f9c74f);
+    transform: scale(1.05);
+}
